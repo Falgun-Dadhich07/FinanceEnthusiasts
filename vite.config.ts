@@ -44,7 +44,7 @@ function figmaAssetsResolver(): Plugin {
 const produceSingleFile = process.env.SINGLE_FILE === 'true'
 
 export default defineConfig({
-  base: '/', // ✅ REQUIRED FOR GITHUB PAGES + CUSTOM DOMAIN
+  base: '/FinanceEnthusiasts/', // ✅ REQUIRED FOR GITHUB PAGES + CUSTOM DOMAIN
   plugins: [
     react(),
     tailwindcss(),
