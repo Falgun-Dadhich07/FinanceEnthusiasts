@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import type { Plugin } from 'vite'
 import path from 'path'
 import react from '@vitejs/plugin-react'
-import { viteSingleFile } from "vite-plugin-singlefile"
 import tailwindcss from '@tailwindcss/vite'
 
 /**
@@ -41,15 +40,13 @@ function figmaAssetsResolver(): Plugin {
   };
 }
 
-const produceSingleFile = process.env.SINGLE_FILE === 'true'
-
 export default defineConfig({
-  base: '/FinanceEnthusiasts/', // ✅ REQUIRED FOR GITHUB PAGES + CUSTOM DOMAIN
+  base: '/FinanceEnthusiasts/',
   plugins: [
     react(),
     tailwindcss(),
     figmaAssetsResolver(),
     removeVersionSpecifiers(),
-    ...(produceSingleFile ? [viteSingleFile()] : []),
   ],
 })
+
